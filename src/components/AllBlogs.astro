@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+const allBlogPosts = await getCollection('blog');
+---
+<ol class="border-l border-slate-400 relative ml-3">
+    {
+        allBlogPosts.map(Blog=>(
+            <li class="relative pl-6">
+                <div class="w-2 h-2 bg-blue-500 rounded-full absolute -left-3"></div>
+                <div>{ Blog.data.title }</div>
+                <div>{ Blog.data.author }</div>
+                <div>{ Blog.data.excerpt }</div>
+            </li>
+        ))
+    }
+</ol>

@@ -1,4 +1,14 @@
 ---
+import AllBlogs from "../components/AllBlogs.astro";
+import Header from "../components/Header.astro";
+// import { Highstorm } from "@highstorm/client";
+
+// const highstorm = new Highstorm({token: import.meta.env.HIGHSTORM_TOKEN})
+
+// TURN ON FOR METRICS
+// await highstorm.ingest("blog.visits", {
+//   event: "Blog visit"
+// })
 ---
 
 <html lang="en">
@@ -10,6 +20,7 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header/>
+		<AllBlogs/>
 	</body>
 </html>
