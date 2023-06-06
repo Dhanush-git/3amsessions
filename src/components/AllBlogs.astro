@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 const allBlogPosts = await getCollection('blog');
 ---
+<h2>All Blogs</h2>
 <ol class="border-l border-slate-400 relative ml-3">
     {
         allBlogPosts.map(Blog=>(
