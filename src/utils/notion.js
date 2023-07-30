@@ -20,7 +20,7 @@ async function getDatabase(){
             }
         }
     });
-    return response
+    return response.results
 }
 
 async function getPost(pageId) {

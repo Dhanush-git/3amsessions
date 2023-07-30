@@ -7,10 +7,9 @@ export default function blog() {
     const [post, setPost] = useState(undefined)
     const router = useRouter()
     const id = router.query.postId
-    console.log(id)
 
     async function getCurrentBlog() {
-       let cPost = await fetch('/api/notion/posts/9ccafa03-0220-4681-ba6f-445f8f2a599f').then((res)=> res.json()).then((data)=> data.data)
+       let cPost = await fetch(`/api/notion/posts/${id}`).then((res)=> res.json()).then((data)=> data.data)
        setPost(cPost)
     }
 
@@ -26,7 +25,7 @@ export default function blog() {
                 post ? 
                     <ReactMarkdown>{ post }</ReactMarkdown>
                 :
-                ''
+                'loading'
             }
         </div>
     )
