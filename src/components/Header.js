@@ -1,12 +1,14 @@
+import { ArrowUpRight } from "react-feather";
+
 const { default: Link } = require("next/link");
 
 export default function Header() {
     return(
-        <div className="flex justify-between px-4 py-5">
-            <div className='flex gap-1'><Link href={"/"}>_3amsessions</Link></div>
+        <header className="flex items-center justify-between px-4 py-4 rounded-full">
+            <div className='flex gap-1'><Link href={"/"}>3amsessions_</Link></div>
             <nav>
-                <Link href={"/blogs"}>blog</Link>
+                <Link className="flex items-center gap-1 text-sm" href={"/blogs"}>blog <ArrowUpRight size={15}/></Link>
             </nav>
-        </div>
+        </header>
     )
 }
